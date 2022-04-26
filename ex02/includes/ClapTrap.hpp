@@ -6,7 +6,6 @@
 # define __CLAPTRAP_HPP__
 
 #include <iostream>
-#include "ClapTrap.hpp"
 
 class ClapTrap {
 	public:
@@ -15,11 +14,12 @@ class ClapTrap {
 		ClapTrap(const ClapTrap&);
 		~ClapTrap();
 		ClapTrap&	operator= (const ClapTrap&); // const for safety... not super nesessary
-		void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
+		void 				attack(const std::string& target);
+		void 				takeDamage(unsigned int amount);
+		void 				beRepaired(unsigned int amount);
+		const std::string	get_name(void);
 
-	private:
+		protected:
 		const std::string	_name;
 		int					hp;
 		int					energy;
