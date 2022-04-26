@@ -10,6 +10,7 @@
 class ClapTrap {
 	public:
 		ClapTrap();
+		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap&);
 		~ClapTrap();
 		ClapTrap&	operator= (const ClapTrap&); // const for safety... not super nesessary
@@ -18,10 +19,10 @@ class ClapTrap {
 		void beRepaired(unsigned int amount);
 
 	private:
-		std::string	_name;
-		int			hp;
-		int			energy;
-		int			damage;
+		const std::string	_name;
+		int					hp;
+		int					energy;
+		int					damage;
 };
 
 std::ostream&	operator<<(std::ostream&, const ClapTrap&);

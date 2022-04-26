@@ -6,6 +6,7 @@
 # define __EX00_HPP__
 
 #include <iostream>
+#include "ClapTrap.hpp"
 
 /*
 # define BLACK	"\033[0;30m"
