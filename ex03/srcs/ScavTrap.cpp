@@ -52,3 +52,15 @@ void ScavTrap::attack(const std::string& target){
 		energy_--;
 	}
 }
+
+int	ScavTrap::get_hp(void){
+	return (hp_);
+}
+
+int	ScavTrap::get_energy(void){
+	return (energy_);
+}
+
+int	ScavTrap::get_damage(void){
+	return (damage_);
+}

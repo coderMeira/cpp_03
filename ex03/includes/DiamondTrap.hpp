@@ -17,6 +17,10 @@ class DiamondTrap : public ScavTrap, public FragTrap{
 		DiamondTrap&	operator= (const DiamondTrap&); // const for safety... not super nesessary
 
 		void	attack(const std::string& target);
+		void	whoAmI(void);
+		int		get_energy(void);
+		int		get_hp(void);
+		int		get_damage(void);
 
 	private:
 	std::string	name_;

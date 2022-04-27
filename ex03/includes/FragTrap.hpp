@@ -16,11 +16,13 @@ class FragTrap : virtual public ClapTrap {
 		~FragTrap();
 		FragTrap&	operator= (const FragTrap&); // const for safety... not super nesessary
 
-	void 	attack(const std::string& target);
-	void	highFivesGuys(void);
+		void 	attack(const std::string& target);
+		void	highFivesGuys(void);
+		int		get_energy(void);
+		int		get_hp(void);
+		int		get_damage(void);
 };
 
 std::ostream&	operator<<(std::ostream&, const FragTrap&);
 
 #endif
-

@@ -52,3 +52,15 @@ void FragTrap::attack(const std::string& target){
 		energy_--;
 	}
 }
+
+int	FragTrap::get_hp(void){
+	return (hp_);
+}
+
+int	FragTrap::get_energy(void){
+	return (energy_);
+}
+
+int	FragTrap::get_damage(void){
+	return (damage_);
+}

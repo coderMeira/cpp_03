@@ -5,7 +5,7 @@
 #include "ex03.hpp"
 
 DiamondTrap::DiamondTrap(void): ClapTrap(), ScavTrap(), FragTrap(){
-	ClapTrap::name_ = "_clap_name";
+	ClapTrap::name_ = name_ + "_clap_name";
 	hp_ = FragTrap::hp_;
 	energy_ = ScavTrap::energy_;
 	damage_ = FragTrap::damage_;
@@ -14,6 +14,7 @@ DiamondTrap::DiamondTrap(void): ClapTrap(), ScavTrap(), FragTrap(){
 
 DiamondTrap::DiamondTrap(std::string name): ClapTrap(), ScavTrap(), FragTrap(){
 	name_ = name;
+	ClapTrap::name_ = name_ + "_clap_name";
 	hp_ = FragTrap::hp_;
 	energy_ = ScavTrap::energy_;
 	damage_ = FragTrap::damage_;
@@ -46,3 +47,18 @@ void DiamondTrap::attack(const std::string& target){
 	ScavTrap::attack(target);
 }
 
+void DiamondTrap::whoAmI(void){
+	std::cout << "My name is " << name_ << ", and ClapTrap's name is " << ClapTrap::get_name() << std::endl;
+}
+
+int	DiamondTrap::get_hp(void){
+	return (hp_);
+}
+
+int	DiamondTrap::get_energy(void){
+	return (energy_);
+}
+
+int	DiamondTrap::get_damage(void){
+	return (damage_);
+}
