@@ -18,12 +18,15 @@ class ClapTrap {
 		void 				takeDamage(unsigned int amount);
 		void 				beRepaired(unsigned int amount);
 		const std::string	get_name(void);
+		int					get_hp(void);
+		int					get_energy(void);
+		int					get_damage(void);
 
 		protected:
-		const std::string	name_;
-		int					hp;
-		int					energy;
-		int					damage;
+		std::string			name_;
+		int					hp_;
+		int					energy_;
+		int					damage_;
 };
 
 std::ostream&	operator<<(std::ostream&, const ClapTrap&);

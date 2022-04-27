@@ -4,11 +4,19 @@
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void): name_(""), hp(100), energy(100), damage(30) {
+ClapTrap::ClapTrap(void){
+	name_ = "";
+	hp_ = 10;
+	energy_ = 10;
+	damage_ = 0;
 	std::cout << "ClapTrap Default constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name): name_(name), hp(100), energy(100), damage(30) {
+ClapTrap::ClapTrap(std::string name){
+	name_ = name;
+	hp_ = 10;
+	energy_ = 10;
+	damage_ = 0;
 	std::cout << "ClapTrap Param constructor called" << std::endl;
 }
 
@@ -23,8 +31,6 @@ ClapTrap::~ClapTrap() {
 }
 
 ClapTrap& ClapTrap::operator= (const ClapTrap& param) {
-	// TODO (Assignment operatior)
-	// std::swap()
 	(void)param;
 	return (*this);
 }
@@ -36,25 +42,40 @@ std::ostream& operator<<(std::ostream& s, const ClapTrap& param) {
 }
 
 void ClapTrap::attack(const std::string& target){
-	if (energy >= 1 && hp >= 1)
+	if (energy_ >= 1)
 	{
-		std::cout << "ClapTrap " << this->name_ << " attacks " << target << " causing " << this->damage << " points of damage!\n";
-		energy--;
+		std::cout << "ClapTrap " << this->name_ << " attacks " << target << " causing " << this->damage_ << " points of damage!\n";
+		energy_--;
 	}
 }
+
 void ClapTrap::takeDamage(unsigned int amount){
 	std::cout << this->name_ << " looses " << amount << " hp\n";
-	hp -= amount;
-	if (hp <= 0)
+	hp_ -= amount;
+	if (hp_ <= 0)
 		std::cout << this->name_ << " dies!\n";
 }
+
 void ClapTrap::beRepaired(unsigned int amount){
 	std::cout << this->name_ << " is repaired for " << amount << " hp\n";
-	hp += amount;
-	if (hp > 10)
-		hp = 10;
+	hp_ += amount;
+	energy_--;
+	if (hp_ > 10)
+		hp_ = 10;
 }
 
 const std::string	ClapTrap::get_name(void){
 	return (name_);
+}
+
+int	ClapTrap::get_hp(void){
+	return (hp_);
+}
+
+int	ClapTrap::get_energy(void){
+	return (energy_);
+}
+
+int	ClapTrap::get_damage(void){
+	return (damage_);
 }
