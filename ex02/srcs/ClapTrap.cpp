@@ -4,11 +4,11 @@
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void): _name(""), hp(100), energy(100), damage(30) {
+ClapTrap::ClapTrap(void): name_(""), hp(100), energy(100), damage(30) {
 	std::cout << "ClapTrap Default constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name): _name(name), hp(100), energy(100), damage(30) {
+ClapTrap::ClapTrap(std::string name): name_(name), hp(100), energy(100), damage(30) {
 	std::cout << "ClapTrap Param constructor called" << std::endl;
 }
 
@@ -38,23 +38,23 @@ std::ostream& operator<<(std::ostream& s, const ClapTrap& param) {
 void ClapTrap::attack(const std::string& target){
 	if (energy >= 1 && hp >= 1)
 	{
-		std::cout << "ClapTrap " << this->_name << " attacks " << target << " causing " << this->damage << " points of damage!\n";
+		std::cout << "ClapTrap " << this->name_ << " attacks " << target << " causing " << this->damage << " points of damage!\n";
 		energy--;
 	}
 }
 void ClapTrap::takeDamage(unsigned int amount){
-	std::cout << this->_name << " looses " << amount << " hp\n";
+	std::cout << this->name_ << " looses " << amount << " hp\n";
 	hp -= amount;
 	if (hp <= 0)
-		std::cout << this->_name << " dies!\n";
+		std::cout << this->name_ << " dies!\n";
 }
 void ClapTrap::beRepaired(unsigned int amount){
-	std::cout << this->_name << " is repaired for " << amount << " hp\n";
+	std::cout << this->name_ << " is repaired for " << amount << " hp\n";
 	hp += amount;
 	if (hp > 10)
 		hp = 10;
 }
 
 const std::string	ClapTrap::get_name(void){
-	return (_name);
+	return (name_);
 }

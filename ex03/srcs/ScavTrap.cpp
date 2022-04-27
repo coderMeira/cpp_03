@@ -5,10 +5,16 @@
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(void) {
+	hp_ = 100;
+	energy_ = 50;
+	damage_ = 20;
 	std::cout << "ScavTrap Default constructor called" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name): ClapTrap(name){
+	hp_ = 100;
+	energy_ = 50;
+	damage_ = 20;
 	std::cout << "ScavTrap Param constructor called" << std::endl;
 }
 
@@ -40,9 +46,9 @@ void	ScavTrap::guardGate(void){
 }
 
 void ScavTrap::attack(const std::string& target){
-	if (energy >= 1)
+	if (energy_ >= 1)
 	{
-		std::cout << "ScavTrap " << this->get_name() << " attacks " << target << " causing " << this->damage << " points of damage!\n";
-		energy--;
+		std::cout << "ScavTrap " << this->get_name() << " attacks " << target << " causing " << this->damage_ << " points of damage!\n";
+		energy_--;
 	}
 }
