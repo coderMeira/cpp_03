@@ -20,7 +20,7 @@ class ClapTrap {
 		const std::string	get_name(void);
 
 		protected:
-		const std::string	_name;
+		const std::string	name_;
 		int					hp;
 		int					energy;
 		int					damage;
