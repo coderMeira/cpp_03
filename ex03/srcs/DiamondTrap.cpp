@@ -4,20 +4,24 @@
 
 #include "ex03.hpp"
 
-DiamondTrap::DiamondTrap(void): ClapTrap(), ScavTrap(), FragTrap(){
+DiamondTrap::DiamondTrap(void){
+	ScavTrap scav_tmp;
+	FragTrap frag_tmp;
 	ClapTrap::name_ = name_ + "_clap_name";
-	hp_ = FragTrap::hp_;
-	energy_ = ScavTrap::energy_;
-	damage_ = FragTrap::damage_;
+	hp_ = frag_tmp.get_hp();
+	energy_ = scav_tmp.get_energy();
+	damage_ = frag_tmp.get_damage();
 	std::cout << "DiamondTrap Default constructor called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string name): ClapTrap(), ScavTrap(), FragTrap(){
+DiamondTrap::DiamondTrap(std::string name){
 	name_ = name;
+	ScavTrap scav_tmp;
+	FragTrap frag_tmp;
 	ClapTrap::name_ = name_ + "_clap_name";
-	hp_ = FragTrap::hp_;
-	energy_ = ScavTrap::energy_;
-	damage_ = FragTrap::damage_;
+	hp_ = frag_tmp.get_hp();
+	energy_ = scav_tmp.get_energy();
+	damage_ = frag_tmp.get_damage();
 	std::cout << "DiamondTrap Param constructor called" << std::endl;
 }
 

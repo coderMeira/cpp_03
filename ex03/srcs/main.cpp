@@ -63,8 +63,8 @@ int	main(void)
 	std::cout << YELLOW << "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n" << ENDC;
 
 	std::cout << RED <<"\t\t\n[ CUSTOM FUNCTIONS ]\n\n" << ENDC;
-	scav.guardGate();
-	frag.highFivesGuys();
+	didi.guardGate();
+	didi.highFivesGuys();
 	didi.whoAmI();
 
 	std::cout << YELLOW << "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n" << ENDC;
